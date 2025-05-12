@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск игр</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">APK</span>
+                <span class="logo-colored">Games</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск игр...">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <div class="nav-links">
+                <a href="popular.html" class="nav-link">Популярные</a>
+                <a href="new.html" class="nav-link">Новинки</a>
+                <a href="categories.html" class="nav-link">Категории</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="search-page">
+            <h1>Поиск игр</h1>
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>Категория:</label>
+                    <select>
+                        <option>Все категории</option>
+                        <option>Экшен</option>
+                        <option>Шутеры</option>
+                        <option>RPG</option>
+                        <option>Гонки</option>
+                        <option>Приключения</option>
+                        <option>Аркады</option>
+                        <option>Головоломки</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Сортировать по:</label>
+                    <select>
+                        <option>Популярности</option>
+                        <option>Дате добавления</option>
+                        <option>Размеру</option>
+                    </select>
+                </div>
+            </div>
+            <div class="search-results games-grid">
+                <!-- Результаты поиска будут добавляться динамически -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>APK Games - ваш надежный источник игр для Android. Ежедневные обновления и новинки.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul>
+                        <li><a href="../About/about.html">О сайте</a></li>
+                        <li><a href="../About/contact.html">Контакты</a></li>
+                        <li><a href="../About/policy.html">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 APK Games. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="index.html" class="back-to-home" title="Вернуться на главную">🏠</a>
+</body>
+</html>
