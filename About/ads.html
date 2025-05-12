@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - APK Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../apkneet.jpg" type="image/png">
+    <style>
+        .about-hero {
+            background: var(--gradient-primary);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .about-hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .team-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .telegram-promo {
+            background: linear-gradient(45deg, #0088cc, #00a2ff);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .telegram-promo h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .telegram-button {
+            background: white;
+            color: #0088cc;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .telegram-button:hover {
+            transform: scale(1.05);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">APK</span>
+                <span class="logo-colored">Games</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск игр...">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <div class="nav-links">
+                <a href="popular.html" class="nav-link">Популярные</a>
+                <a href="new.html" class="nav-link">Новинки</a>
+                <a href="categories.html" class="nav-link">Категории</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Добавляем навигацию категорий -->
+    <nav class="categories-nav">
+        <a href="../kategori/action.html" class="category-link">Экшен 🎮</a>
+        <a href="../kategori/shooter.html" class="category-link">Шутеры 🔫</a>
+        <a href="../kategori/adventure.html" class="category-link">Приключения 🗺️</a>
+        <a href="../kategori/racing.html" class="category-link">Гонки 🏎️</a>
+        <a href="../kategori/rpg.html" class="category-link">RPG 🛡️</a>
+        <a href="../kategori/arcade.html" class="category-link">Аркады 🎲</a>
+        <a href="../kategori/strategy.html" class="category-link">Стратегии 🎯</a>
+        <a href="../kategori/puzzle.html" class="category-link">Головоломки 🧩</a>
+    </nav>
+
+    <div class="about-hero">
+        <div class="container">
+            <h1>О нашем проекте</h1>
+            <p>Мы делаем игры доступными для всех</p>
+        </div>
+    </div>
+
+    <main class="about-content">
+        <div class="info-card">
+            <h2>Кто мы?</h2>
+            <p>APK Games - это команда энтузиастов, которые любят мобильные игры и хотят сделать их доступными для каждого. Мы тщательно отбираем и проверяем каждую игру перед публикацией.</p>
+        </div>
+
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-icon">🚀</div>
+                <h3>Быстрая загрузка</h3>
+                <p>Через Telegram или напрямую с сайта</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <h3>Безопасность</h3>
+                <p>Все файлы проверены на вирусы</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎮</div>
+                <h3>Большой выбор</h3>
+                <p>Игры всех жанров</p>
+            </div>
+        </div>
+
+        <div class="telegram-promo">
+            <h2>Присоединяйтесь к нам в Telegram</h2>
+            <p>Узнавайте первыми о новых играх и обновлениях</p>
+            <a href="https://t.me/+hKV7fMjadrBkMDBi" class="telegram-button">
+                Подписаться на канал
+            </a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>APK Games - ваш надежный источник игр для Android. Ежедневные обновления и новинки.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Ссылки</h3>
+                    <ul>
+                        <li><a href="about.html">О сайте</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="policy.html">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 APK Games. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="../index.html" class="back-to-home" title="Вернуться на главную">🏠</a>
+</body>
+</html>
