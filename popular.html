@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Популярные игры - IGRY-APK.RU</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Скачивайте популярные игры, включая Roblox, на сайте igry-apk.ru. Самые свежие релизы и обновления для вашего устройства.">
+    <meta name="keywords" content="новинки игр, Roblox, скачать игры, APK игры, igry-apk.ru, свежие релизы, мобильные игры, игры на андроид, игры для телефона, игры для планшета">
+    <meta name="author" content="igry-apk.ru">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="apkneet.jpg" type="image/png">
+    <style>
+        .hero-section {
+            background: var(--gradient-primary);
+            padding: 60px 0;
+            margin-bottom: 40px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .game-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card__image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .game-card__badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .back-to-home {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-home:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 0;
+            }
+            
+            .games-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 30px 0;
+            }
+
+            .games-container {
+                grid-template-columns: 1fr;
+            }
+
+            .back-to-home {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Популярные игры на андроид</h1>
+            <p>Популярные игры на телефон</p>
+        </div>
+    </header>
+    <nav class="container">
+        <div class="mobile-menu">
+            <button class="menu-toggle">
+                <span class="menu-icon">📰</span>
+                Новости
+            </button>
+            <div class="mobile-menu-content">
+                <a href="About/latest.html">Последние новости</a>
+                <a href="About/updates.html">Обновления игр</a>
+                <a href="About/events.html">События</a>
+            </div>
+        </div>
+        <a href="About/ads.html" class="button white">Реклама</a>
+    </nav>
+    <main>
+        <!-- Добавляем секцию категорий -->
+        <section class="container">
+            <h2 class="section-title">Категории игр</h2>
+            <div class="categories-grid">
+                <a href="kategori/action.html" class="category-card">
+                    <div class="category-icon">🎮</div>
+                    <h3>Экшен</h3>
+                </a>
+                <a href="kategori/shooter.html" class="category-card">
+                    <div class="category-icon">🔫</div>
+                    <h3>Шутеры</h3>
+                </a>
+                <a href="kategori/adventure.html" class="category-card">
+                    <div class="category-icon">🗺️</div>
+                    <h3>Приключения</h3>
+                </a>
+                <a href="kategori/racing.html" class="category-card">
+                    <div class="category-icon">🏎️</div>
+                    <h3>Гонки</h3>
+                </a>
+                <a href="kategori/rpg.html" class="category-card">
+                    <div class="category-icon">🛡️</div>
+                    <h3>RPG</h3>
+                </a>
+            </div>
+        </section>
+
+        <section class="hero-section">
+            <div class="container">
+                <h1>ПОПУЛЯРНЫЕ ИГРЫ НА ТЕЛЕФОН</h1>
+                <p>Самые популярные игры на андроид</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="games-container">
+                <article class="game-card">
+                    <div class="game-card__image-container">
+                        <img src="photo/repo.jpg" alt="Game Name" class="game-card__image">
+                        <span class="game-card__badge">New</span>
+                    </div>
+                    <div class="game-card__content">
+                        <h3 class="game-card__title">Репо на телефон</h3>
+                        <p class="game-card__desc">Репо это крутая игра на телефон в жанре хоррор</p>
+                        <a href="games/repo.html" class="download-btn">Скачать</a>
+                    </div>
+                </article>
+                <!-- Добавьте больше game-card по аналогии -->
+            </div>
+        </div>
+    </main>
+
+    <a href="index.html" class="back-to-home" title="Вернуться на главную">🏠</a>
+
+    <footer>
+        <p>&copy; 2025 Игровой портал. Все права защищены.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Категории игр</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .categories-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Категории игр</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="About/about.html">О нас</a>
+        <a href="About/latest.html">Новости</a>
+        <a href="About/contact.html">Контакты</a>
+    </nav>
+
+    <section class="categories-section">
+        <h2 class="section-title">Категории игр</h2>
+        <div class="categories-grid">
+            <a href="kategori/action.html" class="category-card">
+                <div class="category-icon">🎮</div>
+                <h3>Экшен</h3>
+            </a>
+            <a href="kategori/shooter.html" class="category-card">
+                <div class="category-icon">🔫</div>
+                <h3>Шутеры</h3>
+            </a>
+            <a href="kategori/adventure.html" class="category-card">
+                <div class="category-icon">🗺️</div>
+                <h3>Приключения</h3>
+            </a>
+            <a href="kategori/racing.html" class="category-card">
+                <div class="category-icon">🏎️</div>
+                <h3>Гонки</h3>
+            </a>
+            <a href="kategori/rpg.html" class="category-card">
+                <div class="category-icon">🛡️</div>
+                <h3>RPG</h3>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            Добро пожаловать на наш сайт, посвящённый играм! Здесь вы найдёте множество категорий, которые помогут вам выбрать игру по вашему вкусу. 
+            Мы стремимся предоставить вам лучший опыт, будь то экшен, приключения, головоломки или что-то другое. 
+            Наш сайт постоянно обновляется, чтобы вы могли наслаждаться самыми последними и популярными играми. 
+            Благодарим вас за посещение и надеемся, что вы найдёте здесь что-то интересное для себя. Удачи и приятной игры!
+        </p>
+    </footer>
+</body>
+</html>

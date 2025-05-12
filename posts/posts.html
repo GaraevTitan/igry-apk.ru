@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости и Посты</title>
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(45deg, #7000FF, #FF3C00);
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            --dark-bg: #0a0a0a;
+            --darker-card: rgba(20, 20, 20, 0.95);
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Navigation Styles */
+        .main-header {
+            background: var(--darker-card);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--darker-card);
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            top: 100%;
+            margin-top: 5px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .post-card {
+            background: var(--darker-card);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .post-title {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+
+        .post-excerpt {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .read-more:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 60, 0, 0.3);
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .category-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: var(--darker-card);
+            margin-top: 50px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section {
+            padding: 20px;
+        }
+
+        .footer-section h3 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: var(--gradient-primary);
+        }
+
+        /* Mobile Footer Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 15px;
+            }
+
+            .footer-section {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+
+            .footer-section ul li {
+                margin-bottom: 5px;
+            }
+
+            .footer-section p {
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+
+            .social-links {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9em;
+            }
+
+            .site-footer {
+                margin-top: 30px;
+                padding: 20px 0;
+            }
+
+            .footer-bottom {
+                padding-top: 15px;
+                margin-top: 15px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="../index.html" class="nav-link">Главная</a>
+            <div class="nav-menu">
+                <a href="../games.html" class="nav-link">Игры</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link">Новости</a>
+                    <div class="dropdown-content">
+                        <a href="../About/about.html">О нас</a>
+                        <a href="../About/updates.html">Обновления</a>
+                        <a href="../About/ads.html">Реклама</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="post-grid">
+        <article class="post-card">
+            <img src="../photo/images.jfif" alt="Блок Бласт на андроид скачать" class="post-image">
+            <div class="category-tag">Шутеры</div>
+            <h2 class="post-title">Block Post — Обновление!</h2>
+            <p class="post-excerpt">Новое обновление Block Post кубический шутер с кучай видов оружие</p>
+            <a href="blockpost.html" class="read-more">Читать далее</a>
+            <div class="post-meta">
+                <span>📅 Сегодня</span>
+                <span>👁️ 1.2K просмотров</span>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="../photo/standleo.jpg" alt="Chicken Gun" class="post-image">
+            <div class="category-tag">Шутеры</div>
+            <h2 class="post-title">stand leo — Безумные битвы!</h2>
+            <p class="post-excerpt">Stand leo приватный сервер - куча скинов</p>
+            <a href="standleo.html" class="read-more">Читать далее</a>
+            <div class="post-meta">
+                <span>📅 Вчера</span>
+                <span>👁️ 856 просмотров</span>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="../photo/blast.jpg" alt="Block Blast" class="post-image">
+            <div class="category-tag">Головоломки</div>
+            <h2 class="post-title">Block Blast — Новые уровни</h2>
+            <p class="post-excerpt">Попробуйте свои силы в новых сложных уровнях Block Blast!</p>
+            <a href="blockblast.html" class="read-more">Читать далее</a>
+            <div class="post-meta">
+                <span>📅 2 дня назад</span>
+                <span>👁️ 634 просмотра</span>
+            </div>
+        </article>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>О нас</h3>
+                <p>Мы предоставляем лучшие мобильные игры и моды для Android. Ежедневные обновления и качественный контент.</p>
+                <div class="social-links">
+                    <a href="https://t.me/+hKV7fMjadrBkMDBi" title="Telegram">📱</a>
+                    <a href="#" title="VK">💬</a>
+                    <a href="#" title="Discord">🎮</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Категории</h3>
+                <ul>
+                    <li><a href="../kategori/action.html">Экшен игры</a></li>
+                    <li><a href="../kategori/shooter.html">Шутеры</a></li>
+                    <li><a href="../kategori/racing.html">Гонки</a></li>
+                    <li><a href="../kategori/rpg.html">RPG</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Полезные ссылки</h3>
+                <ul>
+                    <li><a href="../About/about.html">О проекте</a></li>
+                    <li><a href="../About/updates.html">Обновления</a></li>
+                    <li><a href="../About/ads.html">Реклама</a></li>
+                    <li><a href="../About/policy.html">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 igry-apk.ru - Все права защищены</p>
+        </div>
+    </footer>
+</body>
+</html>
