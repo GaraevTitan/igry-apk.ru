@@ -197,7 +197,7 @@ footer {
 }
 
 header {
-    background: url('pngtree-explosion-game-poster-background-image_262761.jpg') no-repeat center center;
+    background: url('../photo/preview.jpg') no-repeat center center;
     background-size: cover;
     width: 100vw; /* Занимает всю ширину окна браузера */
     height: auto; /* Автоматическая высота */
